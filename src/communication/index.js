@@ -15,7 +15,7 @@ class Communication {
     });
 
     this.runSchedulingConsumer();
-    this.runWebSocketConsumer();
+    // this.runWebSocketConsumer();
   }
 
   async runSchedulingConsumer() {
@@ -91,31 +91,31 @@ class Communication {
     });
   }
 
-  async runWebSocketConsumer() {
-    await this.webSocketConsumer.connect();
+  // async runWebSocketConsumer() {
+  //   await this.webSocketConsumer.connect();
 
-    await this.webSocketConsumer.subscribe({
-      topic: 'webSocket-notification',
-    });
+  //   await this.webSocketConsumer.subscribe({
+  //     topic: 'webSocket-notification',
+  //   });
 
-    await this.webSocketConsumer.run({
-      eachMessage: async ({ message }) => {
-        console.log('Response: ', String(message.value));
+  //   await this.webSocketConsumer.run({
+  //     eachMessage: async ({ message }) => {
+  //       console.log('Response: ', String(message.value));
 
-        const payload = JSON.parse(message.value);
-        const { type } = payload;
+  //       const payload = JSON.parse(message.value);
+  //       const { type } = payload;
 
-        // const response = '';
-        // const notification = payload;
+  //       // const response = '';
+  //       // const notification = payload;
 
-        switch (type) {
-          default:
-            console.log(`Message type ${type} is invalid!`);
-            break;
-        }
-      },
-    });
-  }
+  //       switch (type) {
+  //         default:
+  //           console.log(`Message type ${type} is invalid!`);
+  //           break;
+  //       }
+  //     },
+  //   });
+  // }
 }
 
 export default new Communication();
