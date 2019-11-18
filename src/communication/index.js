@@ -37,48 +37,48 @@ class Communication {
 
         switch (type) {
           case 'NOTIFY_TO_VERIFY_FILTER':
-            notification.title = 'Verique seu filtro!';
-            notification.description = 'O seu filtro pode estar sujo, limpe-o!';
+            notification.title = 'Verificação de filtro';
+            notification.description = 'O seu filtro pode estar sujo, confira e, se necessário, realize a limpeza!';
 
             response = await NotificationController.store(notification);
             console.log(response);
             break;
           case 'NOTIFY_TO_VERIFY_FOOD':
-            notification.title = 'Verique seu compartimento de raçao!';
+            notification.title = 'Verificação de ração';
             notification.description =
-              'O seus peixes podem estar ficando sem comida, da uma olhada lá se tem ração!';
+              'Seus compartimentos podem estar sem comida, dê uma olhada!';
 
             response = await NotificationController.store(notification);
             console.log(response);
             break;
           case 'NOTIFY_TO_SWAP_WATER':
-            notification.title = 'Lembre-se da troca de agua!';
+            notification.title = 'Dia de troca de água';
             notification.description =
-              'Chegou o dia! Troque a aqua de seu aquario para garantir um ambiente agradavél para seus peixes!';
+              'É agora! A água do seu aquário será trocada!';
 
             response = await NotificationController.store(notification);
             console.log(response);
             break;
           case 'NOTIFY_FISH_FEED_REQUEST':
-            notification.title = 'Requisitamos a alimentação do seus peixes!';
+            notification.title = 'Alimentação dos peixes';
             notification.description =
-              'Se tudo deu certo seus peixes estão de buxo cheio!';
+              'Seus peixes serão alimentados agora!';
 
             response = await NotificationController.store(notification);
             console.log(response);
             break;
           case 'NOTIFY_TURN_ON_LIGHTS_REQUEST':
-            notification.title = 'Requisitamos as luzes sejam ligadas!';
+            notification.title = 'Acendimento das luzes';
             notification.description =
-              'Se deu tudo certo as luzes estão ligadas';
+              'Se deu tudo certo, as luzes estão ligadas!';
 
             response = await NotificationController.store(notification);
             console.log(response);
             break;
           case 'NOTIFY_TURN_OFF_LIGHTS_REQUEST':
-            notification.title = 'Requisitamos as luzes sejam desligadas!';
+            notification.title = 'Desligamento das luzes';
             notification.description =
-              'Se deu tudo certo as luzes estão desligadas';
+              'Se deu tudo certo, as luzes estão desligadas!';
 
             response = await NotificationController.store(notification);
             console.log(response);
